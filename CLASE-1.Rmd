@@ -1,0 +1,46 @@
+# ----------------------- #
+# FECHA: 2/02/2024
+# LENGUAJE: R
+# AUTOR: VICTOR M. SANZ
+# CLASE 1
+# ----------------------- #
+
+# ----------------------------- #
+# EXTENSION: .Rmd (R MARKDOWN)
+# EJEMPLO: archivo.Rmd
+# ----------------------------- #
+
+```{r}
+# EJERCICIO 1
+tiempos <- c(0,0,5,15,20, 35,45,55,100) #tiempos de espera
+ls() #para ver las variables que tengo
+median(tiempos) #mediana
+mean(tiempos) #media
+```
+
+```{r}
+# EJERCICIO 2
+tiempos <- c(20,0,5,15,0, 35,45,55,100) #tiempos de espera
+median(tiempos) #mediana
+quantile(tiempos) #cuartiles
+quantile(tiempos, percent = 75) #cuartil 3
+```
+
+# EJERCICIO 3
+```{r}
+tiempos <- c(0,4,6,17,33,45) #tiempos de espera
+data() #para ver los datos que tiene R
+AirPassengers #datos de pasajeros
+View(AirPassengers) #para ver los datos dentro de una tabla
+```
+
+# EJERCICIO 4
+```{r}
+View(iris) #para ver los datos dentro de una tabla iris por ejemplo
+longitud_petalos <- iris$Petal.Length #para seleccionar UNA columna de una tabla usamos el signo de dolar $
+longitud_petalos 
+mean(longitud_petalos) #media DE LA LONGITUD DE LOS PETALOS
+hist(longitud_petalos) #histograma
+```
+
+
