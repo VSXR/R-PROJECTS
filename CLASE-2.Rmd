@@ -10,3 +10,75 @@
 # EJEMPLO: archivo.Rmd
 # ----------------------------- #
 
+
+## Datasets preinstalados
+```{r}
+data()
+```
+
+## Dataset iris
+```{r}
+View(iris)
+```
+
+## Medidas de tendencia central
+```{r}
+# Media
+mean(iris$Sepal.Length)
+
+# Mediana
+median(iris$Sepal.Length)
+
+# Moda
+mode(iris$Sepal.Length)
+```    
+
+## Histograma
+```{r}
+hist(iris$Sepal.Length)
+hist(iris$Sepal.Length, breaks = 30)
+```
+ 
+## Medidas de dispersión
+```{r}
+# Rango
+range(iris$Sepal.Length)
+
+# Quantiles
+quantile(iris$Sepal.Length)
+
+# Rango intercuartílico
+IQR(iris$Sepal.Length)
+
+# Variaza
+var(iris$Sepal.Length)
+
+# Desviación típica
+sqrt(var(iris$Sepal.Length))
+
+# Desviación estandar
+sd(iris$Sepal.Length)
+```
+
+## Vector de una especia concreta de iris
+```{r}
+# Vector especie setosa
+iris_setosa <- iris[iris$Species == "setosa",]
+
+# Visualizar vector
+View(iris_setosa)
+
+# Media
+mean(iris_setosa$Sepal.Length)
+
+# Histograma
+hist(iris_setosa$Sepal.Length)
+
+# Histograma con más barras
+hist(iris_setosa$Sepal.Length, breaks = 12)
+
+# Desviación estandar
+sd(iris_setosa$Sepal.Length)
+
+```
+
