@@ -1,0 +1,12 @@
+# ----------------------- #
+# FECHA: 6/02/2024
+# LENGUAJE: R
+# AUTOR: VICTOR M. SANZ
+# CLASE 2
+# ----------------------- #
+
+# ----------------------------- #
+# EXTENSION: .Rmd (R MARKDOWN)
+# EJEMPLO: archivo.Rmd
+# ----------------------------- #
+
