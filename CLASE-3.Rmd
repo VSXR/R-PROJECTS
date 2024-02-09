@@ -1,0 +1,78 @@
+# ----------------------- #
+# FECHA: 9/02/2024
+# LENGUAJE: R
+# AUTOR: VICTOR M. SANZ
+# CLASE 3
+# ----------------------- #
+
+# ----------------------------- #
+# EXTENSION: .Rmd (R MARKDOWN)
+# EJEMPLO: archivo.Rmd
+# ----------------------------- #
+
+# install.packages("EnvStats")
+# library(EnvStats)
+
+```{r}
+# EJERCICIO 1
+# aqui va  install.packages("EnvStats") --> library(EnvStats)
+install.packages("EnvStats")
+library(EnvStats)
+install.packages("tidyverse") # instalar paquete tidyverse CON DOBRES COMILLAS
+library(tidyverse) # llamar a libreria tidyverse SIN COMILLAS
+
+data()
+View(iris)
+iris_setosa <- iris[iris$Species == "setosa",]
+iris_versicolor <- iris[iris$Species == "versicolor",]
+iris_virginica <- iris[iris$Species == "virginica",]
+hist(iris_virginica$Petal.Length)
+hist(iris_virginica$Petal.Length, breaks = 10)
+
+hist(iris_virginica$Petal.Length, breaks = 10)
+hist(iris_setosa$Petal.Length, breaks = 10)
+hist(iris_versicolor$Petal.Length, breaks = 10)
+
+??EnvStats 
+
+kurtosis(iris_setosa$Petal.Length)
+kurtosis(iris_virginica$Petal.Length)
+kurtosis(iris_setosa$Petal.Length, excess = FALSE) # kurtosis correr coma
+kurtosis(iris_virginica$Petal.Length, excess = FALSE)
+hist(iris_virginica$Petal.Length, breaks = 10) #breaks hace grupos de 10 en este caso
+skewness(iris_virginica$Petal.Length) # da coeficiente asimetria de Fisher o Phisher
+?skewness
+skewness(iris_setosa$Petal.Length)
+
+```
+
+```{r}
+# EJERCICIO 2
+# aes es Estetica y mapping es para dibujar la grafica y que sepa los x e y de aes
+
+# PASOS A SEGUIR: #
+## 1º mis datos
+## 2º propiedades de mis datos
+## 3º geom_point es para dibujar puntos
+## 4º geom_smooth es para dibujar la linea de regresion y con linear_smooth hacemos el tipo de curva lm (linear model (modelo lineal))
+## 5º ggplot es para dibujar el grafico
+
+ggplot(data = iris, aes(x = Petal.Length, y = Petal.Width, color = Species)) +
++     geom_point() +
++     geom_smooth(method = "lm")
+
+Xv <- iris_virginica$Petal.Length
+Yv <- iris_virginica$Petal.Length
+Xs <- iris_setosa$Petal.Length
+Ys <- iris_setosa$Petal.Length
+
+cov(Xv, Yv) # covarianza
+sd(Xv) # desviacion estandar
+sd(Yv) 
+
+cor(Xv, Yv) / (sd(Xv)*sd(Yv)) # coeficiente de correlacion
+
+cov(Xs, Ys)
+ 
+cor(Xs, Ys) / (sd(Xs)*sd(Ys))
+````
